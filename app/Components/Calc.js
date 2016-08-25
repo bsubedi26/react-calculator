@@ -1,7 +1,7 @@
 var React = require('react');
-
+// import result component to include in this component
 var Result = require('./Result');
-
+// Main class
 var Calc = React.createClass({
 	getInitialState: function() {
 		return {
@@ -11,6 +11,7 @@ var Calc = React.createClass({
 			result: ""
 		}
 	},
+	// executed function when a number is clicked
 	numberClick: function(event) {
 		if (this.state.num1 === "") {
 		this.setState({
@@ -24,12 +25,14 @@ var Calc = React.createClass({
 			})
 		}
 	},
+	// executed function when an operator is clicked
 	operatorClick: function(event) {
 		this.setState({
 			operator: event.target.value
 		})
 		console.log(this.state)
 	},
+	// executed function to calculate the equation (when equal sign is clicked)
 	operation: function() {
 		console.log(this.state)
 		if (this.state.num1 !== "" && this.state.num2 !== "" && this.state.operator !== "") {
@@ -67,6 +70,7 @@ var Calc = React.createClass({
 			}
 		}
 	},
+	// clear out all the values from the state
 	clearClick: function() {
 		this.setState({
 			num1: "",
@@ -75,6 +79,7 @@ var Calc = React.createClass({
 			result: ""
 		})
 	},
+	// main class render function
 	render: function() {
 		return (
 				<div className="container">
@@ -117,7 +122,7 @@ var Calc = React.createClass({
 					        <Result first={this.state.num1} second={this.state.num2} operator={this.state.operator} result={this.state.result}/>
 					    </div>
 					</div>
-			</div>
+				</div>
 			)
 	}
 })

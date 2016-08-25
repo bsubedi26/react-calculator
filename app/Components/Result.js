@@ -1,5 +1,6 @@
 var React = require('react');
-
+// result component that is used in the Calc.js file
+// this.props are the values that is passed in from the parent (Calc.js) file
 var Result = React.createClass({
   render: function() {
     return (
@@ -9,6 +10,7 @@ var Result = React.createClass({
                         <h3 className="panel-title">Result</h3>
                     </div>
                     <div className="panel-body">
+                        
                         <h1 id="firstNumber">{this.props.first}</h1>
                         
                         <h1 id="operator">{this.props.operator}</h1>
